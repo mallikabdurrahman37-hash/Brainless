@@ -1,0 +1,16 @@
+{
+  "name": "Brainless",
+  "short_name": "Brainless",
+  "description": "Brainless but never clothless. A personal digital wardrobe.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#E6E8EA",
+  "theme_color": "#E6E8EA",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

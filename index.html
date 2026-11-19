@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brainless: never clothless</title>
+<meta name="description" content="Brainless but never clothless. A personal digital wardrobe.">
+<meta name="theme-color" content="#E6E8EA">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#home" aria-label="Brainless home">
+    <img class="logo-d" src="logo-dark.png" alt="" width="34" height="34">
+    <img class="logo-l" src="logo-light.png" alt="" width="34" height="34">
+    <span>Brainless</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#looks">Looks</a><a href="#closet">Closet</a><a href="#builder">Builder</a>
+  </nav>
+  <div class="bar-actions">
+    <button class="pill" id="install" hidden>Install</button>
+    <button class="pill dark" id="share">Share</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home" aria-label="Featured looks">
+    <div class="hero-copy">
+      <h1>Brainless but never clothless.</h1>
+      <p>Thirteen pieces, seven looks and one closet to flex. Build a fit, save it, send the link.</p>
+      <a class="cta" href="#looks">Explore looks <span class="cta-dot" aria-hidden="true">›</span></a>
+    </div>
+    <div class="hero-stage" id="heroStage"></div>
+    <div class="hero-meta">
+      <span class="hero-tag" id="heroTag"></span>
+      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Featured look"></div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-label="Browse">
+    <div class="shelf-row" id="shelf"></div>
+  </section>
+
+  <section class="looks" id="looks" aria-label="Looks">
+    <div class="sec-head"><h2>Looks</h2><p>Seven fits, worn. Swipe or use the arrows.</p></div>
+    <div class="car" id="car" tabindex="0" aria-roledescription="carousel" aria-label="Looks">
+      <div class="car-track" id="carTrack"></div>
+      <button class="car-btn l" id="prev" aria-label="Previous look">‹</button>
+      <button class="car-btn r" id="next" aria-label="Next look">›</button>
+      <div class="car-dots" id="carDots"></div>
+    </div>
+    <div class="car-info" id="carInfo"></div>
+  </section>
+
+  <div class="layout">
+    <section id="closet" aria-label="Closet">
+      <div class="sec-head"><h2>Closet</h2><p id="summary"></p></div>
+      <div class="top">
+        <nav class="tabs" id="cats" aria-label="Category"></nav>
+        <label class="search"><span class="sr">Search</span><input id="q" type="search" placeholder="Search pieces" autocomplete="off"></label>
+        <div class="seg" id="side" role="group" aria-label="View">
+          <button data-side="front" aria-pressed="true">Front</button>
+          <button data-side="back" aria-pressed="false">Back</button>
+        </div>
+        <button class="chip" id="favOnly" aria-pressed="false">Favorites</button>
+        <div class="swatches" id="colors" aria-label="Filter by color"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No pieces match. Clear the search or filters.</p>
+    </section>
+
+    <aside class="board-wrap" id="builder" aria-label="Outfit builder">
+      <div class="board-head">
+        <h2>Builder</h2>
+        <div class="palette" id="palette"></div>
+      </div>
+      <div class="board" id="board"></div>
+      <div class="actions">
+        <button class="btn" id="shuffle">Shuffle</button>
+        <button class="btn" id="worn">Mark as worn</button>
+        <button class="btn" id="img">Save image</button>
+        <button class="btn ghost" id="clear">Clear</button>
+      </div>
+      <form class="save" id="saveForm">
+        <input id="lookName" placeholder="Name this look" maxlength="32" aria-label="Look name">
+        <button class="btn solid" type="submit">Save look</button>
+      </form>
+      <div class="looks-saved">
+        <h3>Saved looks</h3>
+        <ul id="looksSaved"></ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <img class="logo-d" src="logo-dark.png" alt="" width="28" height="28"><img class="logo-l" src="logo-light.png" alt="" width="28" height="28">
+  <p><b>Brainless</b> · Brainless but never clothless</p>
+</footer>
+
+<button class="dock" id="dock">Builder <span id="dockCount">0</span></button>
+<p class="toast" id="toast" role="status" aria-live="polite"></p>
+<dialog id="modal"><div class="m-body" id="mBody"></div></dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
